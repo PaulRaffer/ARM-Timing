@@ -69,33 +69,33 @@ void LCD_putchar(int character)
 	switch (character)
 	{
 		case '\b':
-			LCD_start_byte(LCD_execute);
+			LCD_start_byte(LCD_start | LCD_instruction_write);
 			LCD_data_byte(LCD_Cursor_or_display_shift | LCD_cursor_shift | LCD_shift_to_left);
-			LCD_start_byte(LCD_output);
+			LCD_start_byte(LCD_start | LCD_data_write);
 			break;
 		
 		case '\n':
-			LCD_start_byte(LCD_execute);
+			LCD_start_byte(LCD_start | LCD_instruction_write);
 			/* TODO */
-			LCD_start_byte(LCD_output);
+			LCD_start_byte(LCD_start | LCD_data_write);
 			break;
 		
 		case '\r':
-			LCD_start_byte(LCD_execute);
+			LCD_start_byte(LCD_start | LCD_instruction_write);
 			/* TODO */
-			LCD_start_byte(LCD_output);
+			LCD_start_byte(LCD_start | LCD_data_write);
 			break;
 		
 		case '\t':
-			LCD_start_byte(LCD_execute);
+			LCD_start_byte(LCD_start | LCD_instruction_write);
 			/* TODO */
-			LCD_start_byte(LCD_output);
+			LCD_start_byte(LCD_start | LCD_data_write);
 			break;
 		
 		case '\v':
-			LCD_start_byte(LCD_execute);
+			LCD_start_byte(LCD_start | LCD_instruction_write);
 			/* TODO */
-			LCD_start_byte(LCD_output);
+			LCD_start_byte(LCD_start | LCD_data_write);
 			break;
 		
 		/*case '\0':
@@ -121,6 +121,8 @@ void LCD_printf(char* format, ...)
 	
 	va_list arg;
 	va_start(arg, format);
+	
+	LCD_start_byte(LCD_start | LCD_data_write);
 	
 	while (c = *format++)
 	{

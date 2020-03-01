@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\ARM-Timing.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\ARM-Timing.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat Feb 29 22:42:16 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun Mar 01 14:02:09 2020
 <BR><P>
 <H3>Maximum Stack Usage =        224 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -570,24 +570,25 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[5b]"></a>LCD_printf(char*, ...)</STRONG> (Thumb, 186 bytes, Stack size 72 bytes, lcd.o(i._Z10LCD_printfPcz))
+<P><STRONG><a name="[5b]"></a>LCD_printf(char*, ...)</STRONG> (Thumb, 192 bytes, Stack size 72 bytes, lcd.o(i._Z10LCD_printfPcz))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = LCD_printf(char*, ...) &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_puts(const char*)
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_puts(const char*)
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5c]"></a>LCD_putchar(int)</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, lcd.o(i._Z11LCD_putchari))
+<P><STRONG><a name="[5d]"></a>LCD_putchar(int)</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, lcd.o(i._Z11LCD_putchari))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LCD_putchar(int) &rArr; LCD_data_byte(unsigned char) &rArr; LCD_byte(unsigned char)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_data_byte(unsigned char)
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_puts(const char*)
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_puts(const char*)
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_printf(char*, ...)
 </UL>
 
@@ -596,7 +597,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_byte(unsigned char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
+<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_data_bytes_count(unsigned char*, int)
 </UL>
 
@@ -604,13 +605,14 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5e]"></a>LCD_start_byte(unsigned char)</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lcd.o(i._Z14LCD_start_byteh))
+<P><STRONG><a name="[5c]"></a>LCD_start_byte(unsigned char)</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lcd.o(i._Z14LCD_start_byteh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = LCD_start_byte(unsigned char) &rArr; LCD_byte(unsigned char)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_byte(unsigned char)
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms(int)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
+<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_printf(char*, ...)
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -625,7 +627,7 @@ Global Symbols
 <P><STRONG><a name="[61]"></a>wait_ms(int)</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd.o(i._Z7wait_msi))
 <BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_byte(unsigned char)
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_reset()
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -635,13 +637,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms(int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_data_byte(unsigned char)
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
 </UL>
 
-<P><STRONG><a name="[5d]"></a>LCD_puts(const char*)</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd.o(i._Z8LCD_putsPKc))
+<P><STRONG><a name="[5e]"></a>LCD_puts(const char*)</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd.o(i._Z8LCD_putsPKc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = LCD_puts(const char*) &rArr; LCD_putchar(int) &rArr; LCD_data_byte(unsigned char) &rArr; LCD_byte(unsigned char)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_putchar(int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_printf(char*, ...)
 </UL>
@@ -654,14 +656,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4d]"></a>main</STRONG> (Thumb, 92 bytes, Stack size 32 bytes, main.o(i.main))
+<P><STRONG><a name="[4d]"></a>main</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224 + Unknown Stack Size
 <LI>Call Chain = main &rArr; LCD_printf(char*, ...) &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_reset()
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms(int)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_data_bytes_count(unsigned char*, int)
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_start_byte(unsigned char)
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init_ports()
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_printf(char*, ...)
 </UL>
