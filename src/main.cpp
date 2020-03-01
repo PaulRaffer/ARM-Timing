@@ -39,7 +39,7 @@ int main()
 	GPIOB->BSRR = LCD_CS;
 	GPIOB->BSRR = LCD_SCLK; wait_ms(1);
 	
-	LCD_start_byte(LCD_execute);
+	LCD_start_byte(LCD_start | LCD_instruction_write);
 	uint8_t program[] =
 	{
 		LCD_Function_set | LCD_8bit | LCD_2line_or_4line_display | LCD_RE_1 | LCD_normal_display,
@@ -57,15 +57,6 @@ int main()
 	};
 	LCD_data_bytes_count(program, sizeof(program) / sizeof(uint8_t));
 	
-	LCD_start_byte(LCD_output);
-	//LCD_data_bytes_0term((uint8_t*)"Hallo Welt");
-	
 	LCD_printf("%c %d %i %o %s%x\b", 111, 111, 111, 111, "Hex:", 111);
-	
-	LCD_start_byte(LCD_execute);
-	
-	
-	//LCD_start_byte(LCD_execute);
-	//LCD_data(0xAC);
 }
 

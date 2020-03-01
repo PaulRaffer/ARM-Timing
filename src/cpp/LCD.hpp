@@ -93,7 +93,7 @@ auto Display<Data>::operator()(Data start_byte, Args... data) -> Display<Data> &
 template <typename Data>
 auto Display<Data>::clear() -> Display<Data> &
 {
-	return (*this)(LCD_execute, clear_display);
+	return (*this)(LCD_start | LCD_instruction_write, clear_display);
 }
 
 template <typename Data>
@@ -101,35 +101,35 @@ auto Display<Data>::on(bool on) -> Display<Data> &
 {
 	if (on) m_on |=  display_on;
 	else    m_on &= ~display_on;
-	return (*this)(LCD_execute, m_on);
+	return (*this)(LCD_start | LCD_instruction_write, m_on);
 }
 template <typename Data>
 auto Display<Data>::cursor(bool on) -> Display<Data> &
 {
 	if (on) m_on |=  cursor_on;
 	else    m_on &= ~cursor_on;
-	return (*this)(LCD_execute, m_on);
+	return (*this)(LCD_start | LCD_instruction_write, m_on);
 }
 template <typename Data>
 auto Display<Data>::blink(bool on) -> Display<Data> &
 {
 	if (on) m_on |=  blink_on;
 	else    m_on &= ~blink_on;
-	return (*this)(LCD_execute, m_on);
+	return (*this)(LCD_start | LCD_instruction_write, m_on);
 }
 
 
 template <typename Data>
 auto Display<Data>::operator<<(char c) -> Display<Data> &
 {
-	LCD_start_byte(LCD_output);
+	LCD_start_byte(LCD_start | LCD_data_write);
 	LCD_data_byte(c);
 	return *this;
 }
 template <typename Data>
 auto Display<Data>::operator<<(char str[]) -> Display<Data> &
 {
-	LCD_start_byte(LCD_output);
+	LCD_start_byte(LCD_start | LCD_data_write);
 	LCD_data_bytes_0term((uint8_t*)str);
 	return *this;
 }
