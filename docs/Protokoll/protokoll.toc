@@ -1,0 +1,14 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\hbox to\@tempdima {1\hfil }Inhaltsverzeichnis}{3}%
+\contentsline {section}{\hbox to\@tempdima {2\hfil }Originalangabe}{3}%
+\contentsline {section}{\numberline {3}Plichtenheft}{3}%
+\contentsline {section}{\numberline {4}Blockschaltbild}{3}%
+\contentsline {section}{\numberline {5}Algorithmusbeschreibung}{3}%
+\contentsline {section}{\numberline {6}Kommentiertes Listing}{3}%
+\contentsline {section}{\numberline {7}Testplan}{3}%
+\contentsline {section}{\numberline {8}Zeitaufwand}{3}%
+\contentsline {section}{\numberline {9}Aufgetretene Probleme}{3}%
+\contentsline {section}{\numberline {10}Erkenntnisse}{3}%
+\contentsline {section}{Anhang}{3}%
+\contentsline {subsection}{Messprotokoll}{3}%
+\contentsline {subsection}{Datenblätter}{3}%

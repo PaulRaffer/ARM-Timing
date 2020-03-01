@@ -84,9 +84,9 @@ template <typename Data>
 template <typename... Args>
 auto Display<Data>::operator()(Data start_byte, Args... data) -> Display<Data> &
 {
-	SPI_start(start_byte);
-	Data data_array[sizeof...(data)] {(Data)data...};
-	LCD_data_count(data_array, sizeof...(data));
+	LCD_start_byte(start_byte);
+	Data data_bytes[sizeof...(data)] {(Data)data...};
+	LCD_data_bytes_count(data_bytes, sizeof...(data));
 	return *this;
 }
 
@@ -122,15 +122,15 @@ auto Display<Data>::blink(bool on) -> Display<Data> &
 template <typename Data>
 auto Display<Data>::operator<<(char c) -> Display<Data> &
 {
-	SPI_start(LCD_output);
-	LCD_data(c);
+	LCD_start_byte(LCD_output);
+	LCD_data_byte(c);
 	return *this;
 }
 template <typename Data>
 auto Display<Data>::operator<<(char str[]) -> Display<Data> &
 {
-	SPI_start(LCD_output);
-	LCD_data_0term((uint8_t*)str);
+	LCD_start_byte(LCD_output);
+	LCD_data_bytes_0term((uint8_t*)str);
 	return *this;
 }
 

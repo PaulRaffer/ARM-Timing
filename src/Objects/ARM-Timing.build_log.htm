@@ -27,9 +27,14 @@ Project File Date:  02/12/2020
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
-assembling startup_stm32f10x_md.s...
 compiling LCD.cpp...
+assembling startup_stm32f10x_md.s...
 compiling LCD.c...
+c\LCD.c(125): warning:  #1293-D: assignment in condition
+  	while (c = *format++)
+c\LCD.c(143): warning:  #186-D: pointless comparison of unsigned integer with zero
+  					if (i < 0)
+c\LCD.c: 2 warnings, 0 errors
 compiling main.cpp...
 cpp/LCD.hpp(8): warning:  #1207-D: unknown attribute "maybe_unused"
   [[maybe_unused]] constexpr uint32_t volatile & set  {GPIOB->BSRR};
@@ -70,8 +75,8 @@ cpp/LCD.hpp(33): warning:  #1207-D: unknown attribute "maybe_unused"
 main.cpp: 18 warnings, 0 errors
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=1040 RO-data=252 RW-data=0 ZI-data=1632  
-".\Objects\ARM-Timing.axf" - 0 Error(s), 18 Warning(s).
+Program Size: Code=2076 RO-data=292 RW-data=0 ZI-data=1632  
+".\Objects\ARM-Timing.axf" - 0 Error(s), 20 Warning(s).
 
 <h2>Software Packages used:</h2>
 

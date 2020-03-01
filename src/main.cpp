@@ -8,8 +8,7 @@
  * \return	Error-Code
  * \retval	0		The function is successfully executed
  */
- /*
-auto main() -> int
+/*auto main() -> int
 {
 	using namespace LCD;
 	
@@ -40,24 +39,33 @@ int main()
 	GPIOB->BSRR = LCD_CS;
 	GPIOB->BSRR = LCD_SCLK; wait_ms(1);
 	
-	SPI_start(LCD_execute);
+	LCD_start_byte(LCD_execute);
 	uint8_t program[] =
 	{
-		0x3A,
-		0x09,
+		LCD_Function_set | LCD_8bit | LCD_2line_or_4line_display | LCD_RE_1 | LCD_normal_display,
+		LCD_Extended_function_set | LCD_3line_or_4line_display,
 		LCD_view | LCD_bottom,
 		0x1E,
-		0x39,
-		0x1B,
-		LCD_follower_control | LCD_follower_circuit_on | 0x6,
-		0x57,
-		0x72,
-		0x38,
-		LCD_clear_display,
-		LCD_display | LCD_display_on | LCD_cursor_on | LCD_blink_on,
+		LCD_Function_set | LCD_8bit | LCD_2line_or_4line_display | LCD_RE_0 | LCD_instruction_set_1,
+		LCD_Internal_OSC_frequency | LCD_BS0_1 | 0x3,
+		LCD_Follower_control | LCD_set_divider_circuit_on | 0x6,
+		LCD_Power_Icon_control_Contrast_set | LCD_set_booster_and_regulator_circuit_on | 0x3,
+		LCD_Contrast_set | 0x2,
+		LCD_Function_set | LCD_8bit | LCD_2line_or_4line_display,
+		LCD_Clear_display,
+		LCD_Display_OnOff_control | LCD_display_on | LCD_cursor_on | LCD_blink_on,
 	};
-	LCD_data_count(program, sizeof(program) / sizeof(uint8_t));
+	LCD_data_bytes_count(program, sizeof(program) / sizeof(uint8_t));
 	
-	SPI_start(LCD_output);
-	LCD_data_0term((uint8_t*)"Hallo Welt!\n");
+	LCD_start_byte(LCD_output);
+	//LCD_data_bytes_0term((uint8_t*)"Hallo Welt");
+	
+	LCD_printf("%c %d %i %o %s%x\b", 111, 111, 111, 111, "Hex:", 111);
+	
+	LCD_start_byte(LCD_execute);
+	
+	
+	//LCD_start_byte(LCD_execute);
+	//LCD_data(0xAC);
 }
+

@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+
+\usepackage{lastpage}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+
+\usepackage{array}
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+	#1\ignorespaces
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\lstdefinelanguage
+	[CortexM3]{Assembler}
+	[x86masm]{Assembler}
+	{morekeywords={
+		AREA,READONLY,EXPORT,DCB,LDR,BEQ,CBNZ,CBZ,BFI,BNE,B,ORR,ALIGN,BIC,UDIV,STRH,DCD,TST,LDRB,
+	}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{macros.tex}
+
+\lhead{\labor}                             \rhead{\uebungstitel}
+\lfoot{\schule} \cfoot{\gruppe\ / \klasse} \rfoot{Seite \thepage\ von \pageref{LastPage}}
+
+\lstset{
+	tabsize=4,
+	keywordstyle=\color{green},
+	commentstyle=\color{gray},
+	stringstyle=\color{blue},
+}
+
+\title{Laborprotokoll - \uebungsnummer\ \uebungstitel}
+\author{\gruppe}
+
+\begin{document}
+	\input{header.tex}
+	\input{content.tex}
+\end{document}
