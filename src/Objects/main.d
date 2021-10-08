@@ -1,6 +1,6 @@
 .\objects\main.o: main.cpp
-.\objects\main.o: cpp/LCD.hpp
-.\objects\main.o: cpp/../c/LCD.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: LCD.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h
 .\objects\main.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h

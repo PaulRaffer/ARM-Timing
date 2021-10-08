@@ -22,61 +22,23 @@ Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
 C:\Users\Paul\Paul\Schule\2019-2020\4BHEL\DIC1\Projekte\ARM-Timing\src\ARM-Timing.uvprojx
-Project File Date:  02/12/2020
+Project File Date:  03/18/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 assembling startup_stm32f10x_md.s...
-compiling LCD.cpp...
-compiling main.cpp...
-cpp/LCD.hpp(8): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr uint32_t volatile & set  {GPIOB->BSRR};
-cpp/LCD.hpp(9): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr uint32_t volatile & reset{GPIOB->BRR };
-cpp/LCD.hpp(11): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto RST  = int{1 << 11};
-cpp/LCD.hpp(12): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto CS   = int{1 << 12};
-cpp/LCD.hpp(13): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto SCLK = int{1 << 13};
-cpp/LCD.hpp(14): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto SOD  = int{1 << 14};
-cpp/LCD.hpp(15): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto SID  = int{1 << 15};
-cpp/LCD.hpp(19): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto clear_display        = uint8_t{0x1 << 0}; // C++14: 0b00000001
-cpp/LCD.hpp(21): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto return_home          = uint8_t{0x1 << 1}; // C++14: 0b00000010
-cpp/LCD.hpp(23): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto view                 = uint8_t{0x1 << 2}; // C++14: 0b00000100
-cpp/LCD.hpp(24): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto  bottom              = uint8_t{0x1 << 1}; // C++14: 0b00000010
-cpp/LCD.hpp(25): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto  top                 = uint8_t{0x1 << 0}; // C++14: 0b00000001
-cpp/LCD.hpp(27): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto display              = uint8_t{0x1 << 3}; // C++14: 0b00001000
-cpp/LCD.hpp(28): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto  display_on          = uint8_t{0x1 << 2}; // C++14: 0b00000100
-cpp/LCD.hpp(29): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto  cursor_on           = uint8_t{0x1 << 1}; // C++14: 0b00000010
-cpp/LCD.hpp(30): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto  blink_on            = uint8_t{0x1 << 0}; // C++14: 0b00000001
-cpp/LCD.hpp(32): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto follower_control     = uint8_t{0x3 << 5}; // C++14: 0b01100000
-cpp/LCD.hpp(33): warning:  #1207-D: unknown attribute "maybe_unused"
-  [[maybe_unused]] constexpr auto  follower_circuit_on = uint8_t{0x1 << 3}; // C++14: 0b00001000
-main.cpp: 18 warnings, 0 errors
 compiling LCD.c...
-c\LCD.c(127): warning:  #1293-D: assignment in condition
+LCD.c(154): warning:  #1293-D: assignment in condition
   	while (c = *format++)
-c\LCD.c(145): warning:  #186-D: pointless comparison of unsigned integer with zero
+LCD.c(172): warning:  #186-D: pointless comparison of unsigned integer with zero
   					if (i < 0)
-c\LCD.c: 2 warnings, 0 errors
+LCD.c: 2 warnings, 0 errors
 compiling system_stm32f10x.c...
+compiling main.cpp...
 linking...
-Program Size: Code=2068 RO-data=292 RW-data=0 ZI-data=1632  
-".\Objects\ARM-Timing.axf" - 0 Error(s), 20 Warning(s).
+Program Size: Code=2080 RO-data=292 RW-data=0 ZI-data=1632  
+".\Objects\ARM-Timing.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -108,17 +70,17 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
-      Source file:   Device\Source\system_stm32f10x.c
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
 
    * Component: HTL Hollabrunn::HTL Hollabrunn:Libraries:STDLib:2.0.0
-      Include file:  Header\armv10_std.h
       Library file:  Library\ARMV10_STD.lib
+      Include file:  Header\armv10_std.h
 
    * Component: ARM::CMSIS:CORE:5.3.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

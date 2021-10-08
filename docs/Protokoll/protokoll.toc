@@ -1,14 +1,14 @@
 \babel@toc {ngerman}{}
-\contentsline {section}{\hbox to\@tempdima {1\hfil }Inhaltsverzeichnis}{3}%
-\contentsline {section}{\hbox to\@tempdima {2\hfil }Originalangabe}{3}%
+\contentsline {section}{\hbox to\@tempdima {1\hfil }Inhaltsverzeichnis}{2}%
+\contentsline {section}{\hbox to\@tempdima {2\hfil }Originalangabe}{2}%
 \contentsline {section}{\numberline {3}Plichtenheft}{3}%
-\contentsline {section}{\numberline {4}Blockschaltbild}{3}%
-\contentsline {section}{\numberline {5}Algorithmusbeschreibung}{3}%
-\contentsline {section}{\numberline {6}Kommentiertes Listing}{3}%
-\contentsline {section}{\numberline {7}Testplan}{3}%
-\contentsline {section}{\numberline {8}Zeitaufwand}{3}%
-\contentsline {section}{\numberline {9}Aufgetretene Probleme}{3}%
-\contentsline {section}{\numberline {10}Erkenntnisse}{3}%
-\contentsline {section}{Anhang}{3}%
-\contentsline {subsection}{Messprotokoll}{3}%
-\contentsline {subsection}{Datenblätter}{3}%
+\contentsline {section}{\numberline {4}Zeitablaufdiagramm}{3}%
+\contentsline {section}{\numberline {5}Kommentiertes Listing}{3}%
+\contentsline {subsection}{\numberline {5.1}LCD.h}{3}%
+\contentsline {subsection}{\numberline {5.2}LCD.c}{6}%
+\contentsline {subsection}{\numberline {5.3}main.c}{9}%
+\contentsline {section}{\numberline {6}Zeitaufwand}{9}%
+\contentsline {section}{\numberline {7}Aufgetretene Probleme}{9}%
+\contentsline {section}{Anhang}{9}%
+\contentsline {subsection}{Messprotokoll}{9}%
+\contentsline {subsection}{Datenblatter (Command Table)}{9}%

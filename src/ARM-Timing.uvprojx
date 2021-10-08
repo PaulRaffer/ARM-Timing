@@ -388,22 +388,12 @@
             <File>
               <FileName>LCD.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\c\LCD.h</FilePath>
+              <FilePath>.\LCD.h</FilePath>
             </File>
             <File>
               <FileName>LCD.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\c\LCD.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD.hpp</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\cpp\LCD.hpp</FilePath>
-            </File>
-            <File>
-              <FileName>LCD.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\cpp\LCD.cpp</FilePath>
+              <FilePath>.\LCD.c</FilePath>
             </File>
           </Files>
         </Group>

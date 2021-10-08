@@ -1,0 +1,197 @@
+\doxysection{C\+:/\+Users/\+Paul/\+Paul/\+Schule/2019-\/2020/4\+B\+H\+E\+L/\+D\+I\+C1/\+Projekte/\+A\+R\+M-\/\+Timing/src/\+L\+CD.c File Reference}
+\label{_l_c_d_8c}\index{C:/Users/Paul/Paul/Schule/2019-\/2020/4BHEL/DIC1/Projekte/ARM-\/Timing/src/LCD.c@{C:/Users/Paul/Paul/Schule/2019-\/2020/4BHEL/DIC1/Projekte/ARM-\/Timing/src/LCD.c}}
+{\ttfamily \#include \char`\"{}L\+C\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ wait\+\_\+ms} (int t\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Wartet fuer t\+\_\+ms ms. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+init\+\_\+ports} ()
+\begin{DoxyCompactList}\small\item\em Initialisiert Portleitungen. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+reset} ()
+\begin{DoxyCompactList}\small\item\em Reset L\+C\+D-\/\+Display. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initialisiert L\+C\+D-\/\+Display. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+start\+\_\+byte} (uint8\+\_\+t start\+\_\+byte)
+\begin{DoxyCompactList}\small\item\em Sendet ein Startbyte zur Anzeige. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+write\+\_\+byte} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Sendet ein Byte zur Anzeige. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+write\+\_\+data\+\_\+byte} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Sendet ein Datenbyte zur Anzeige. \end{DoxyCompactList}\item 
+\mbox{\label{_l_c_d_8c_a0080340d80addcb5f0700f21f1268a20}} 
+void {\bfseries L\+C\+D\+\_\+write\+\_\+data\+\_\+bytes\+\_\+0term} (uint8\+\_\+t $\ast$cmd)
+\item 
+\mbox{\label{_l_c_d_8c_a83ac1ff71eeb7af7f70a54babe0af1ba}} 
+void {\bfseries L\+C\+D\+\_\+write\+\_\+data\+\_\+bytes\+\_\+count} (uint8\+\_\+t $\ast$cmd, int count)
+\item 
+\mbox{\label{_l_c_d_8c_a0a0b8dabed92f270415257c150176db2}} 
+void {\bfseries L\+C\+D\+\_\+init\+\_\+normal} ()
+\item 
+void \textbf{ L\+C\+D\+\_\+putchar} (int character)
+\begin{DoxyCompactList}\small\item\em Gibt ein Zeichen auf der Anzeige aus. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+puts} (char const $\ast$str)
+\begin{DoxyCompactList}\small\item\em Gibt eine Zeichenkette auf der Anzeige aus. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+printf} (char const $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Siehe {\texttt{ https\+://www.\+cplusplus.\+com/reference/cstdio/printf/}}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ L\+C\+D\+\_\+set\+\_\+cursor\+\_\+position} (uint8\+\_\+t x, uint8\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Berechnet einen Befehl um den Cursor an die Position (x, y) zu setzen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_l_c_d_8c_a0742e25c23ca1096ceba081b98fd58ba}} 
+\index{LCD.c@{LCD.c}!LCD\_init@{LCD\_init}}
+\index{LCD\_init@{LCD\_init}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_init()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialisiert L\+C\+D-\/\+Display. 
+
+Die Funktion L\+C\+D\+\_\+init initialisiert die Portleitungen, fuehrt einen Reset aus und initialisiert die restlichen Portleitungen mit einem Defaultwert. \mbox{\label{_l_c_d_8c_a482d06ee36999f896a999a6f99713529}} 
+\index{LCD.c@{LCD.c}!LCD\_init\_ports@{LCD\_init\_ports}}
+\index{LCD\_init\_ports@{LCD\_init\_ports}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_init\_ports()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+init\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialisiert Portleitungen. 
+
+Die Funktion L\+C\+D\+\_\+init\+\_\+ports initialisiert die fuenf Portleitungen die zum kommunizieren mit der L\+C\+D-\/\+Anzeige notwendeg sind. (R\+ST, CS, S\+C\+LK, S\+OD, S\+ID) \mbox{\label{_l_c_d_8c_a66f99ad054ed2ce769c3e5fe8045a724}} 
+\index{LCD.c@{LCD.c}!LCD\_printf@{LCD\_printf}}
+\index{LCD\_printf@{LCD\_printf}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_printf()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+printf (\begin{DoxyParamCaption}\item[{char const $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Siehe {\texttt{ https\+://www.\+cplusplus.\+com/reference/cstdio/printf/}}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Formatstring \\
+\hline
+\mbox{\texttt{ in}}  & {\em ...} & weitere Argumente \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8c_af1e7ff8e3a5e491ca7af1481f756adb3}} 
+\index{LCD.c@{LCD.c}!LCD\_putchar@{LCD\_putchar}}
+\index{LCD\_putchar@{LCD\_putchar}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_putchar()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+putchar (\begin{DoxyParamCaption}\item[{int}]{character }\end{DoxyParamCaption})}
+
+
+
+Gibt ein Zeichen auf der Anzeige aus. 
+
+Die Funktion L\+C\+D\+\_\+putchar gibt ein Zeichen auf der L\+C\+D-\/\+Anzeige aus. A\+C\+H\+T\+U\+NG\+: F\+U\+N\+K\+T\+I\+O\+N\+I\+E\+RT N\+UR W\+E\+NN V\+O\+R\+H\+ER D\+ER B\+E\+F\+E\+HL L\+C\+D\+\_\+start\+\_\+byte(L\+C\+D\+\_\+start $\vert$ L\+C\+D\+\_\+data\+\_\+write) A\+U\+S\+G\+W\+F\+U\+E\+H\+RT W\+U\+R\+D\+E!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em character} & Zeichen das ausgegeben werden soll \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8c_a0708c7186e7342e831a2124469890963}} 
+\index{LCD.c@{LCD.c}!LCD\_puts@{LCD\_puts}}
+\index{LCD\_puts@{LCD\_puts}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_puts()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+puts (\begin{DoxyParamCaption}\item[{char const $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Gibt eine Zeichenkette auf der Anzeige aus. 
+
+Die Funktion L\+C\+D\+\_\+puts gibt alle Zeichen der nullterminierten Zecihenkette str auf der L\+C\+D-\/\+Anzeige aus. A\+C\+H\+T\+U\+NG\+: F\+U\+N\+K\+T\+I\+O\+N\+I\+E\+RT N\+UR W\+E\+NN V\+O\+R\+H\+ER D\+ER B\+E\+F\+E\+HL L\+C\+D\+\_\+start\+\_\+byte(L\+C\+D\+\_\+start $\vert$ L\+C\+D\+\_\+data\+\_\+write) A\+U\+S\+G\+W\+F\+U\+E\+H\+RT W\+U\+R\+D\+E!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & Zeichenkette die ausgegeben werden soll \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8c_a942332abe0d9cb2c19409cfef10a3336}} 
+\index{LCD.c@{LCD.c}!LCD\_reset@{LCD\_reset}}
+\index{LCD\_reset@{LCD\_reset}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_reset()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset L\+C\+D-\/\+Display. 
+
+Fuehrt einen Reset der L\+C\+D-\/\+Anzeige aus. (Reset-\/\+Leitung fuer 1ms auf low setzen) \mbox{\label{_l_c_d_8c_a282e09c0385a44951120d2f3898c8428}} 
+\index{LCD.c@{LCD.c}!LCD\_set\_cursor\_position@{LCD\_set\_cursor\_position}}
+\index{LCD\_set\_cursor\_position@{LCD\_set\_cursor\_position}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_set\_cursor\_position()}
+{\footnotesize\ttfamily uint8\+\_\+t L\+C\+D\+\_\+set\+\_\+cursor\+\_\+position (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Berechnet einen Befehl um den Cursor an die Position (x, y) zu setzen. 
+
+\begin{DoxyReturn}{Returns}
+Befehl um den Cursor an die Position (x, y) zu setzen 
+\end{DoxyReturn}
+\mbox{\label{_l_c_d_8c_ab4222e245255196c15ad1a47b1457d2f}} 
+\index{LCD.c@{LCD.c}!LCD\_start\_byte@{LCD\_start\_byte}}
+\index{LCD\_start\_byte@{LCD\_start\_byte}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_start\_byte()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+start\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{start\+\_\+byte }\end{DoxyParamCaption})}
+
+
+
+Sendet ein Startbyte zur Anzeige. 
+
+Die Funktion L\+C\+D\+\_\+start\+\_\+byte unterbricht normalen Datenverkehr mit einer Regelverletzung (S\+ID wird gesetzt wenn Clock = 1) und sendet dann ein Byte mit der Funktion L\+C\+D\+\_\+write\+\_\+byte.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+\_\+byte} & Byte dass nach der Regelverletzung uebertragen wird. Dies ist folgendermassen aufgebaut\+: 0 RS R/W 1 1 1 1 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8c_abcbc9c52e2b2e24b2c9317fceaa332fd}} 
+\index{LCD.c@{LCD.c}!LCD\_write\_byte@{LCD\_write\_byte}}
+\index{LCD\_write\_byte@{LCD\_write\_byte}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_write\_byte()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Sendet ein Byte zur Anzeige. 
+
+Die Funktion L\+C\+D\+\_\+write\+\_\+byte sendet ein Byte zur L\+C\+D-\/\+Anzeige (L\+SB zuerst).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Byte dass uebertragen wird \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8c_aa15944521ed2eeeb5c057f86c22a726c}} 
+\index{LCD.c@{LCD.c}!LCD\_write\_data\_byte@{LCD\_write\_data\_byte}}
+\index{LCD\_write\_data\_byte@{LCD\_write\_data\_byte}!LCD.c@{LCD.c}}
+\doxysubsubsection{LCD\_write\_data\_byte()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write\+\_\+data\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Sendet ein Datenbyte zur Anzeige. 
+
+Die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte bringt zurest das Das Datenbyte in die gewuenschte Form (D7 D6 D5 D4 D3 D2 D1 D0 =$>$ 0 0 0 0 D3 D2 D1 D0 0 0 0 0 D7 D6 D5 D4) und sendet die zwei entstandenen Bytes mithilfe der Funktion L\+C\+D\+\_\+write\+\_\+byte an die Anzeige.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & Datenbyte das uebertragen wird \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8c_ad5ef5655374e0d323fac24a4973e7b3b}} 
+\index{LCD.c@{LCD.c}!wait\_ms@{wait\_ms}}
+\index{wait\_ms@{wait\_ms}!LCD.c@{LCD.c}}
+\doxysubsubsection{wait\_ms()}
+{\footnotesize\ttfamily void wait\+\_\+ms (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+Wartet fuer t\+\_\+ms ms. 
+
+Die Funktion wait\+\_\+ms haelt das Programm fuer t\+\_\+ms ms an. 

@@ -1,0 +1,367 @@
+\doxysection{C\+:/\+Users/\+Paul/\+Paul/\+Schule/2019-\/2020/4\+B\+H\+E\+L/\+D\+I\+C1/\+Projekte/\+A\+R\+M-\/\+Timing/src/\+L\+CD.h File Reference}
+\label{_l_c_d_8h}\index{C:/Users/Paul/Paul/Schule/2019-\/2020/4BHEL/DIC1/Projekte/ARM-\/Timing/src/LCD.h@{C:/Users/Paul/Paul/Schule/2019-\/2020/4BHEL/DIC1/Projekte/ARM-\/Timing/src/LCD.h}}
+{\ttfamily \#include $<$stm32f10x.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{_l_c_d_8h_a06fc87d81c62e9abb8790b6e5713c55b}} 
+enum \{ \newline
+{\bfseries L\+C\+D\+\_\+\+R\+ST} = 0x1 $<$$<$ 11, 
+{\bfseries L\+C\+D\+\_\+\+CS} = 0x1 $<$$<$ 12, 
+{\bfseries L\+C\+D\+\_\+\+S\+C\+LK} = 0x1 $<$$<$ 13, 
+{\bfseries L\+C\+D\+\_\+\+S\+OD} = 0x1 $<$$<$ 14, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+S\+ID} = 0x1 $<$$<$ 15
+ \}
+\begin{DoxyCompactList}\small\item\em Konstantendefinitionen fuer Portleitungen. \end{DoxyCompactList}\item 
+\mbox{\label{_l_c_d_8h_a0f92f4e3714a140b2488207d4f48265d}} 
+enum \+: uint8\+\_\+t \{ \newline
+{\bfseries L\+C\+D\+\_\+start} = 0x1F, 
+{\bfseries L\+C\+D\+\_\+read} = 0x1 $<$$<$ 5, 
+{\bfseries L\+C\+D\+\_\+write} = 0x0 $<$$<$ 5, 
+{\bfseries L\+C\+D\+\_\+\+R\+S\+\_\+1} = 0x1 $<$$<$ 6, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+R\+S\+\_\+0} = 0x0 $<$$<$ 6, 
+{\bfseries L\+C\+D\+\_\+instruction\+\_\+write} = L\+C\+D\+\_\+\+R\+S\+\_\+0 $\vert$ L\+C\+D\+\_\+write, 
+{\bfseries L\+C\+D\+\_\+read\+\_\+busy\+\_\+flag\+\_\+and\+\_\+address\+\_\+counter} = L\+C\+D\+\_\+\+R\+S\+\_\+0 $\vert$ L\+C\+D\+\_\+read, 
+{\bfseries L\+C\+D\+\_\+data\+\_\+write} = L\+C\+D\+\_\+\+R\+S\+\_\+1 $\vert$ L\+C\+D\+\_\+write, 
+\newline
+{\bfseries L\+C\+D\+\_\+data\+\_\+read} = L\+C\+D\+\_\+\+R\+S\+\_\+1 $\vert$ L\+C\+D\+\_\+read
+ \}
+\begin{DoxyCompactList}\small\item\em Konstantendefinitionen fuer Startbytes. \end{DoxyCompactList}\item 
+\mbox{\label{_l_c_d_8h_a278fc0c62b2690ccd05af439aa76c711}} 
+enum \+: uint8\+\_\+t \{ \newline
+{\bfseries L\+C\+D\+\_\+\+Clear\+\_\+display} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+\+Return\+\_\+home} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+\+Power\+\_\+down\+\_\+mode} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+power\+\_\+down\+\_\+mode\+\_\+set} = 0x1 $<$$<$ 0, 
+\newline
+{\bfseries L\+C\+D\+\_\+power\+\_\+down\+\_\+mode\+\_\+disable} = 0x0 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+\+Entry\+\_\+mode\+\_\+set} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+cursor\+\_\+blink\+\_\+moves\+\_\+to\+\_\+right} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+cursor\+\_\+blink\+\_\+moves\+\_\+to\+\_\+left} = 0x0 $<$$<$ 1, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+Display\+\_\+\+On\+Off\+\_\+control} = 0x1 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+display\+\_\+on} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+display\+\_\+off} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+cursor\+\_\+on} = 0x1 $<$$<$ 1, 
+\newline
+{\bfseries L\+C\+D\+\_\+cursor\+\_\+off} = 0x0 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+blink\+\_\+on} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+blink\+\_\+off} = 0x0 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+\+Extended\+\_\+function\+\_\+set} = 0x1 $<$$<$ 3, 
+\newline
+{\bfseries L\+C\+D\+\_\+6dot\+\_\+font\+\_\+width} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+5dot\+\_\+font\+\_\+width} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+black\+\_\+white\+\_\+inverting\+\_\+of\+\_\+cursor\+\_\+enable} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+black\+\_\+white\+\_\+inverting\+\_\+of\+\_\+cursor\+\_\+disable} = 0x0 $<$$<$ 1, 
+\newline
+{\bfseries L\+C\+D\+\_\+3line\+\_\+or\+\_\+4line\+\_\+display} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+1line\+\_\+or\+\_\+2line\+\_\+display} = 0x0 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+\+Cursor\+\_\+or\+\_\+display\+\_\+shift} = 0x1 $<$$<$ 4, 
+{\bfseries L\+C\+D\+\_\+display\+\_\+shift} = 0x1 $<$$<$ 3, 
+\newline
+{\bfseries L\+C\+D\+\_\+cursor\+\_\+shift} = 0x0 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+shift\+\_\+to\+\_\+right} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+shift\+\_\+to\+\_\+left} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+\+Double\+\_\+height\+\_\+\+Bias\+\_\+\+Displaydot\+\_\+shift} = 0x1 $<$$<$ 4, 
+\newline
+{\bfseries L\+C\+D\+\_\+3rd\+\_\+line} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+2nd\+\_\+line} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+1st\+\_\+line} = 0x2 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+both\+\_\+lines} = 0x3 $<$$<$ 2, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+Internal\+\_\+\+O\+S\+C\+\_\+frequency} = 0x1 $<$$<$ 4, 
+{\bfseries L\+C\+D\+\_\+\+B\+S0\+\_\+1} = 0x1 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+\+B\+S0\+\_\+0} = 0x0 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+\+Shift\+\_\+enable} = 0x1 $<$$<$ 4, 
+\newline
+{\bfseries L\+C\+D\+\_\+1st\+\_\+line\+\_\+display\+\_\+shift\+\_\+enable} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+1st\+\_\+line\+\_\+display\+\_\+shift\+\_\+disable} = 0x0 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+2nd\+\_\+line\+\_\+display\+\_\+shift\+\_\+enable} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+2nd\+\_\+line\+\_\+display\+\_\+shift\+\_\+disable} = 0x0 $<$$<$ 1, 
+\newline
+{\bfseries L\+C\+D\+\_\+3rd\+\_\+line\+\_\+display\+\_\+shift\+\_\+enable} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+3rd\+\_\+line\+\_\+display\+\_\+shift\+\_\+disable} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+4th\+\_\+line\+\_\+display\+\_\+shift\+\_\+enable} = 0x1 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+4th\+\_\+line\+\_\+display\+\_\+shift\+\_\+disable} = 0x0 $<$$<$ 3, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+Scroll\+\_\+enable} = 0x1 $<$$<$ 4, 
+{\bfseries L\+C\+D\+\_\+1st\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+enable} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+1st\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+disable} = 0x0 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+2nd\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+enable} = 0x1 $<$$<$ 1, 
+\newline
+{\bfseries L\+C\+D\+\_\+2nd\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+disable} = 0x0 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+3rd\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+enable} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+3rd\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+disable} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+4th\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+enable} = 0x1 $<$$<$ 3, 
+\newline
+{\bfseries L\+C\+D\+\_\+4th\+\_\+line\+\_\+dot\+\_\+scroll\+\_\+disable} = 0x0 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+\+Function\+\_\+set} = 0x1 $<$$<$ 5, 
+{\bfseries L\+C\+D\+\_\+8bit} = 0x1 $<$$<$ 4, 
+{\bfseries L\+C\+D\+\_\+4bit} = 0x0 $<$$<$ 4, 
+\newline
+{\bfseries L\+C\+D\+\_\+2line\+\_\+or\+\_\+4line\+\_\+display} = 0x1 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+1line\+\_\+or\+\_\+3line\+\_\+display} = 0x0 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+double\+\_\+height\+\_\+font\+\_\+control\+\_\+for\+\_\+2line\+\_\+mode\+\_\+enable} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+double\+\_\+height\+\_\+font\+\_\+control\+\_\+for\+\_\+2line\+\_\+mode\+\_\+disable} = 0x1 $<$$<$ 2, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+R\+E\+\_\+0} = 0x0 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+instruction\+\_\+set\+\_\+1} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+instruction\+\_\+set\+\_\+0} = 0x0 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+\+C\+G\+R\+A\+M\+\_\+\+S\+E\+R\+A\+M\+\_\+blink\+\_\+enable} = 0x1 $<$$<$ 2, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+C\+G\+R\+A\+M\+\_\+\+S\+E\+R\+A\+M\+\_\+blink\+\_\+disable} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+\+R\+E\+\_\+1} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+reverse\+\_\+display} = 0x1 $<$$<$ 0, 
+{\bfseries L\+C\+D\+\_\+normal\+\_\+display} = 0x0 $<$$<$ 0, 
+\newline
+{\bfseries L\+C\+D\+\_\+set\+\_\+\+C\+G\+R\+A\+M\+\_\+address} = 0x1 $<$$<$ 6, 
+{\bfseries L\+C\+D\+\_\+set\+\_\+\+S\+E\+G\+R\+A\+M\+\_\+address} = 0x1 $<$$<$ 6, 
+{\bfseries L\+C\+D\+\_\+\+Power\+\_\+\+Icon\+\_\+control\+\_\+\+Contrast\+\_\+set} = 0x5 $<$$<$ 4, 
+{\bfseries L\+C\+D\+\_\+\+I\+C\+O\+N\+\_\+display\+\_\+on} = 0x1 $<$$<$ 3, 
+\newline
+{\bfseries L\+C\+D\+\_\+\+I\+C\+O\+N\+\_\+display\+\_\+off} = 0x0 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+set\+\_\+booster\+\_\+and\+\_\+regulator\+\_\+circuit\+\_\+on} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+set\+\_\+booster\+\_\+and\+\_\+regulator\+\_\+circuit\+\_\+off} = 0x0 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+\+Follower\+\_\+control} = 0x3 $<$$<$ 5, 
+\newline
+{\bfseries L\+C\+D\+\_\+set\+\_\+divider\+\_\+circuit\+\_\+on} = 0x1 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+set\+\_\+divider\+\_\+circuit\+\_\+off} = 0x0 $<$$<$ 3, 
+{\bfseries L\+C\+D\+\_\+\+Contrast\+\_\+set} = 0x7 $<$$<$ 4, 
+{\bfseries L\+C\+D\+\_\+set\+\_\+\+D\+D\+R\+A\+M\+\_\+address} = 0x1 $<$$<$ 7, 
+\newline
+{\bfseries L\+C\+D\+\_\+set\+\_\+scroll\+\_\+quantity} = 0x1 $<$$<$ 7, 
+{\bfseries L\+C\+D\+\_\+view} = 0x1 $<$$<$ 2, 
+{\bfseries L\+C\+D\+\_\+bottom} = 0x1 $<$$<$ 1, 
+{\bfseries L\+C\+D\+\_\+top} = 0x1 $<$$<$ 0
+ \}
+\begin{DoxyCompactList}\small\item\em Konstantendefinitionen fuer Befehle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ wait\+\_\+ms} (int t\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Wartet fuer t\+\_\+ms ms. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+init\+\_\+ports} ()
+\begin{DoxyCompactList}\small\item\em Initialisiert Portleitungen. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+reset} ()
+\begin{DoxyCompactList}\small\item\em Reset L\+C\+D-\/\+Display. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initialisiert L\+C\+D-\/\+Display. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+start\+\_\+byte} (uint8\+\_\+t start\+\_\+byte)
+\begin{DoxyCompactList}\small\item\em Sendet ein Startbyte zur Anzeige. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+write\+\_\+byte} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Sendet ein Byte zur Anzeige. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+write\+\_\+data\+\_\+byte} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Sendet ein Datenbyte zur Anzeige. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+write\+\_\+data\+\_\+bytes\+\_\+0term} (uint8\+\_\+t cmd[$\,$])
+\begin{DoxyCompactList}\small\item\em Ruft die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte fuer jedes Element im Nullterminierten Array cmd auf. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+write\+\_\+data\+\_\+bytes\+\_\+count} (uint8\+\_\+t cmd[$\,$], int count)
+\begin{DoxyCompactList}\small\item\em Ruft die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte fuer die ersten count Elemente im Array cmd auf. \end{DoxyCompactList}\item 
+\mbox{\label{_l_c_d_8h_a0a0b8dabed92f270415257c150176db2}} 
+void {\bfseries L\+C\+D\+\_\+init\+\_\+normal} ()
+\item 
+void \textbf{ L\+C\+D\+\_\+putchar} (int character)
+\begin{DoxyCompactList}\small\item\em Gibt ein Zeichen auf der Anzeige aus. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+puts} (char const $\ast$str)
+\begin{DoxyCompactList}\small\item\em Gibt eine Zeichenkette auf der Anzeige aus. \end{DoxyCompactList}\item 
+void \textbf{ L\+C\+D\+\_\+printf} (char const $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Siehe {\texttt{ https\+://www.\+cplusplus.\+com/reference/cstdio/printf/}}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ L\+C\+D\+\_\+set\+\_\+cursor\+\_\+position} (uint8\+\_\+t x, uint8\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Berechnet einen Befehl um den Cursor an die Position (x, y) zu setzen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_l_c_d_8h_a0742e25c23ca1096ceba081b98fd58ba}} 
+\index{LCD.h@{LCD.h}!LCD\_init@{LCD\_init}}
+\index{LCD\_init@{LCD\_init}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_init()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialisiert L\+C\+D-\/\+Display. 
+
+Die Funktion L\+C\+D\+\_\+init initialisiert die Portleitungen, fuehrt einen Reset aus und initialisiert die restlichen Portleitungen mit einem Defaultwert. \mbox{\label{_l_c_d_8h_a482d06ee36999f896a999a6f99713529}} 
+\index{LCD.h@{LCD.h}!LCD\_init\_ports@{LCD\_init\_ports}}
+\index{LCD\_init\_ports@{LCD\_init\_ports}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_init\_ports()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+init\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialisiert Portleitungen. 
+
+Die Funktion L\+C\+D\+\_\+init\+\_\+ports initialisiert die fuenf Portleitungen die zum kommunizieren mit der L\+C\+D-\/\+Anzeige notwendeg sind. (R\+ST, CS, S\+C\+LK, S\+OD, S\+ID) \mbox{\label{_l_c_d_8h_a66f99ad054ed2ce769c3e5fe8045a724}} 
+\index{LCD.h@{LCD.h}!LCD\_printf@{LCD\_printf}}
+\index{LCD\_printf@{LCD\_printf}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_printf()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+printf (\begin{DoxyParamCaption}\item[{char const $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Siehe {\texttt{ https\+://www.\+cplusplus.\+com/reference/cstdio/printf/}}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & Formatstring \\
+\hline
+\mbox{\texttt{ in}}  & {\em ...} & weitere Argumente \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_af1e7ff8e3a5e491ca7af1481f756adb3}} 
+\index{LCD.h@{LCD.h}!LCD\_putchar@{LCD\_putchar}}
+\index{LCD\_putchar@{LCD\_putchar}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_putchar()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+putchar (\begin{DoxyParamCaption}\item[{int}]{character }\end{DoxyParamCaption})}
+
+
+
+Gibt ein Zeichen auf der Anzeige aus. 
+
+Die Funktion L\+C\+D\+\_\+putchar gibt ein Zeichen auf der L\+C\+D-\/\+Anzeige aus. A\+C\+H\+T\+U\+NG\+: F\+U\+N\+K\+T\+I\+O\+N\+I\+E\+RT N\+UR W\+E\+NN V\+O\+R\+H\+ER D\+ER B\+E\+F\+E\+HL L\+C\+D\+\_\+start\+\_\+byte(L\+C\+D\+\_\+start $\vert$ L\+C\+D\+\_\+data\+\_\+write) A\+U\+S\+G\+W\+F\+U\+E\+H\+RT W\+U\+R\+D\+E!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em character} & Zeichen das ausgegeben werden soll \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_a0708c7186e7342e831a2124469890963}} 
+\index{LCD.h@{LCD.h}!LCD\_puts@{LCD\_puts}}
+\index{LCD\_puts@{LCD\_puts}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_puts()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+puts (\begin{DoxyParamCaption}\item[{char const $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Gibt eine Zeichenkette auf der Anzeige aus. 
+
+Die Funktion L\+C\+D\+\_\+puts gibt alle Zeichen der nullterminierten Zecihenkette str auf der L\+C\+D-\/\+Anzeige aus. A\+C\+H\+T\+U\+NG\+: F\+U\+N\+K\+T\+I\+O\+N\+I\+E\+RT N\+UR W\+E\+NN V\+O\+R\+H\+ER D\+ER B\+E\+F\+E\+HL L\+C\+D\+\_\+start\+\_\+byte(L\+C\+D\+\_\+start $\vert$ L\+C\+D\+\_\+data\+\_\+write) A\+U\+S\+G\+W\+F\+U\+E\+H\+RT W\+U\+R\+D\+E!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & Zeichenkette die ausgegeben werden soll \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_a942332abe0d9cb2c19409cfef10a3336}} 
+\index{LCD.h@{LCD.h}!LCD\_reset@{LCD\_reset}}
+\index{LCD\_reset@{LCD\_reset}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_reset()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset L\+C\+D-\/\+Display. 
+
+Fuehrt einen Reset der L\+C\+D-\/\+Anzeige aus. (Reset-\/\+Leitung fuer 1ms auf low setzen) \mbox{\label{_l_c_d_8h_a282e09c0385a44951120d2f3898c8428}} 
+\index{LCD.h@{LCD.h}!LCD\_set\_cursor\_position@{LCD\_set\_cursor\_position}}
+\index{LCD\_set\_cursor\_position@{LCD\_set\_cursor\_position}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_set\_cursor\_position()}
+{\footnotesize\ttfamily uint8\+\_\+t L\+C\+D\+\_\+set\+\_\+cursor\+\_\+position (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Berechnet einen Befehl um den Cursor an die Position (x, y) zu setzen. 
+
+\begin{DoxyReturn}{Returns}
+Befehl um den Cursor an die Position (x, y) zu setzen 
+\end{DoxyReturn}
+\mbox{\label{_l_c_d_8h_ab4222e245255196c15ad1a47b1457d2f}} 
+\index{LCD.h@{LCD.h}!LCD\_start\_byte@{LCD\_start\_byte}}
+\index{LCD\_start\_byte@{LCD\_start\_byte}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_start\_byte()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+start\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{start\+\_\+byte }\end{DoxyParamCaption})}
+
+
+
+Sendet ein Startbyte zur Anzeige. 
+
+Die Funktion L\+C\+D\+\_\+start\+\_\+byte unterbricht normalen Datenverkehr mit einer Regelverletzung (S\+ID wird gesetzt wenn Clock = 1) und sendet dann ein Byte mit der Funktion L\+C\+D\+\_\+write\+\_\+byte.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+\_\+byte} & Byte dass nach der Regelverletzung uebertragen wird. Dies ist folgendermassen aufgebaut\+: 0 RS R/W 1 1 1 1 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_abcbc9c52e2b2e24b2c9317fceaa332fd}} 
+\index{LCD.h@{LCD.h}!LCD\_write\_byte@{LCD\_write\_byte}}
+\index{LCD\_write\_byte@{LCD\_write\_byte}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_write\_byte()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Sendet ein Byte zur Anzeige. 
+
+Die Funktion L\+C\+D\+\_\+write\+\_\+byte sendet ein Byte zur L\+C\+D-\/\+Anzeige (L\+SB zuerst).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Byte dass uebertragen wird \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_aa15944521ed2eeeb5c057f86c22a726c}} 
+\index{LCD.h@{LCD.h}!LCD\_write\_data\_byte@{LCD\_write\_data\_byte}}
+\index{LCD\_write\_data\_byte@{LCD\_write\_data\_byte}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_write\_data\_byte()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write\+\_\+data\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Sendet ein Datenbyte zur Anzeige. 
+
+Die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte bringt zurest das Das Datenbyte in die gewuenschte Form (D7 D6 D5 D4 D3 D2 D1 D0 =$>$ 0 0 0 0 D3 D2 D1 D0 0 0 0 0 D7 D6 D5 D4) und sendet die zwei entstandenen Bytes mithilfe der Funktion L\+C\+D\+\_\+write\+\_\+byte an die Anzeige.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & Datenbyte das uebertragen wird \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_a4c62c7b1e05a22c321fc2fd638787eb8}} 
+\index{LCD.h@{LCD.h}!LCD\_write\_data\_bytes\_0term@{LCD\_write\_data\_bytes\_0term}}
+\index{LCD\_write\_data\_bytes\_0term@{LCD\_write\_data\_bytes\_0term}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_write\_data\_bytes\_0term()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write\+\_\+data\+\_\+bytes\+\_\+0term (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Ruft die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte fuer jedes Element im Nullterminierten Array cmd auf. 
+
+Die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte\+\_\+0term ruft die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte fuer jedes Element im Nullterminierten Array cmd auf.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & Datenbytes die uebertragen werden \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_a45d9ea7ad56eee32ba376689f08da16a}} 
+\index{LCD.h@{LCD.h}!LCD\_write\_data\_bytes\_count@{LCD\_write\_data\_bytes\_count}}
+\index{LCD\_write\_data\_bytes\_count@{LCD\_write\_data\_bytes\_count}!LCD.h@{LCD.h}}
+\doxysubsubsection{LCD\_write\_data\_bytes\_count()}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write\+\_\+data\+\_\+bytes\+\_\+count (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd[$\,$],  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Ruft die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte fuer die ersten count Elemente im Array cmd auf. 
+
+Die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte\+\_\+count ruft die Funktion L\+C\+D\+\_\+write\+\_\+data\+\_\+byte fuer die ersten count Elemente im Array cmd auf.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & Datenbytes die uebertragen werden \\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & Anzahl der Elemente die uebertagen werden \\
+\hline
+\end{DoxyParams}
+\mbox{\label{_l_c_d_8h_ad5ef5655374e0d323fac24a4973e7b3b}} 
+\index{LCD.h@{LCD.h}!wait\_ms@{wait\_ms}}
+\index{wait\_ms@{wait\_ms}!LCD.h@{LCD.h}}
+\doxysubsubsection{wait\_ms()}
+{\footnotesize\ttfamily void wait\+\_\+ms (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+Wartet fuer t\+\_\+ms ms. 
+
+Die Funktion wait\+\_\+ms haelt das Programm fuer t\+\_\+ms ms an. 
